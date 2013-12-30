@@ -1,0 +1,19 @@
+<h1> Welcome!</h1>
+<h1><%= link_to "Create new email", new_inquiry_path %> <br/></h1> <hr><hr>
+
+<% @inquiries.each do |inquiry| %>
+  First Name: <%= inquiry.first_name %><br/><br/>
+  Last Name: <%= inquiry.last_name %><br/><br/>
+  Email: <%= inquiry.email %><br/><br/>
+  Subject: <%= inquiry.subject %><br/><br/>
+  Description: <%= inquiry.description %><br/><br/>
+
+<%= link_to "Delete information", inquiry_path(inquiry), data: { confirm: "Are you sure?" }, method: :delete %>
+<%= link_to "Edit information", edit_inquiry_path(inquiry)%>
+
+
+  <br/><hr><hr>
+
+
+
+<% end %>
